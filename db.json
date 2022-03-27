@@ -20,27 +20,6 @@
       "endDate": "2022-07-07",
       "started": true,
       "name": "moon"
-    },
-    {
-      "name": "emin test",
-      "createdAt": "2022-03-27T14:12:22.837Z",
-      "started": false,
-      "endDate": "2022-03-27T14:12:22.847Z",
-      "id": 4
-    },
-    {
-      "name": "emin test",
-      "createdAt": "2022-03-27T14:12:51.246Z",
-      "started": false,
-      "endDate": "2022-03-27T14:12:51.256Z",
-      "id": 5
-    },
-    {
-      "name": "emin test",
-      "createdAt": "2022-03-27T14:13:40.002Z",
-      "started": false,
-      "endDate": "2022-03-27T14:13:40.012Z",
-      "id": 6
     }
   ]
 }

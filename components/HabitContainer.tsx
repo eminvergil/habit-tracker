@@ -6,7 +6,6 @@ import {habitListState} from "../state/HabitState";
 import {Habit} from "./Habit/Habit";
 
 const HabitContainer = () => {
-
     const snap = useSnapshot(habitListState);
     useEffect(() => {
         SetHabitsToState()

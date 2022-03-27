@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet, Text, View} from "react-native";
 import {LinearProgress} from "react-native-elements";
 import {HabitDomain} from "../../domain/HabitDomain";
+import {overlayState} from "../../state/OverlayState";
+import {habitIdState} from "../../state/HabitState";
 
 interface Props {
     habit: HabitDomain
@@ -9,7 +11,6 @@ interface Props {
 
 export class Habit extends React.Component<Props> {
     render() {
-
         let dateDiffInDays = (date1: Date, date2: Date) => {
             const _MS_PER_DAY = (1000 * 60 * 60 * 24)
             let utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate())
@@ -28,8 +29,14 @@ export class Habit extends React.Component<Props> {
             return dayDiff / goalDiff;
         }
 
+        const handleTouch = () => {
+            overlayState.overlay = true
+            habitIdState.id = this.props.habit.Id
+            console.log("touched name: ", this.props.habit.Name)
+        }
+
         return (
-            <View style={styles.container}>
+            <View style={styles.container}  onTouchStart={handleTouch}>
 
                     <Text style={{textAlign: 'center', fontSize: 20, fontWeight: 'bold'}}>{this.props.habit.Name}</Text>
                     <LinearProgress value={this.props.habit.Started ? GetValue() : 0} variant="determinate" style={{marginVertical: 20}}/>
