@@ -1,25 +1,18 @@
 import { StyleSheet, Text, View} from 'react-native';
-import {Input, LinearProgress, Button, Overlay} from "react-native-elements";
+import {Button} from "react-native-elements";
 import React, {useState} from "react";
-import {Habit} from "./components/Habit/Habit";
+import HabitContainer from "./components/HabitContainer";
+import OverlayComponent from "./components/Overlay/OverlayComponent";
 
 export default function App() {
-  const [day, setDay] = useState(3)
-    const [started,setStarted] = useState(true)
 
-  function toggleOverlay() {
-    setStarted(!started)
-  }
 
   return (
     <View style={styles.container}>
-      <Text style={{textAlign: 'center', fontSize: 30, fontWeight: 'bold'}}>Break your bad habits</Text>
-      {/*TODO: propsları bi class yapsınıa at*/}
-        <Habit day={day} goal={30} started={started} setStarted={setStarted} setDay={setDay} />
-      <Button title="Create Goal" onPress={() => setStarted(true)} containerStyle={{margin: 10}}/>
-      <Overlay isVisible={started} onBackdropPress={toggleOverlay}>
-          <Habit day={day} goal={15} started={!started} setStarted={setStarted} setDay={setDay} />
-      </Overlay>
+        <Text style={{textAlign: 'center', fontSize: 30, fontWeight: 'bold', marginBottom:20, borderStyle: 'dashed', borderWidth: 2 , padding: 5}}>Break your bad habits</Text>
+        <HabitContainer />
+        <Button title="Create Goal" onPress={() => console.log(true)} containerStyle={{margin: 10}} />
+        <OverlayComponent />
     </View>
   );
 }
